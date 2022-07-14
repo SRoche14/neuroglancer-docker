@@ -1,19 +1,25 @@
-FROM debian:jessie
-MAINTAINER kmader <kmader@4quant.com>
+FROM debian:bullseye
+LABEL author="Steven Roche"
 ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR /opt/conda
 
 # Core installs
 RUN apt-get update && \
-    apt-get install -y git vim wget build-essential python-dev ca-certificates bzip2 libsm6 && \
+    apt-get upgrade && \
+    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs && \
     apt-get clean
 
-# Install miniconda 2.7
+RUN npm install -g npm@latest
+
+RUN mkdir -p ~/miniconda3
+
+# Install miniconda 
 RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.continuum.io/miniconda/Miniconda2-4.3.11-Linux-x86_64.sh && \
-    /bin/bash /Miniconda2-4.3.11-Linux-x86_64.sh -b -p $CONDA_DIR && \
-    rm Miniconda2-4.3.11-Linux-x86_64.sh && \
-    $CONDA_DIR/bin/conda install --yes conda==4.2.9
+    wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh && \
+    /bin/bash ~/miniconda3/miniconda.sh -b -p $CONDA_DIR && \
+    rm -rf ~/miniconda3/miniconda3.sh && \
+    $CONDA_DIR/bin/conda install --yes conda
+
 
 # Create a user
 RUN useradd -m -s /bin/bash neuroglancer_user
@@ -30,15 +36,14 @@ WORKDIR $HOME
 # setup the rest of the packages
 RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython
 # Install Jupyter notebook to allow for more interactive neuroglancing
-RUN conda install --quiet --yes \
-    'notebook=4.2*' \
-    && conda clean -tipsy
+RUN conda install --yes -c conda-forge notebook \
+    && conda clean -a
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
-WORKDIR neuroglancer/python
-RUN ls ../../*
-RUN python setup.py install
+WORKDIR neuroglancer
+RUN ls 
+RUN python3 setup.py install
 
 ADD docker_demo.py $HOME/docker_demo.py
 ADD notebooks $HOME/notebooks
