@@ -7,13 +7,13 @@ ENV CONDA_DIR /opt/conda
 RUN apt-get update && \
     apt-get upgrade && \
     apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs && \
-    apt-get install --only-upgrade nodejs && \
     apt-get clean
 
 RUN npm install -g npm@latest
 
 RUN mkdir -p ~/miniconda3
 
+RUN node -v
 # Install miniconda 
 RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh && \
