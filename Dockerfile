@@ -9,9 +9,6 @@ RUN apt-get update && \
     apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs && \
     apt-get clean
     
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-
-RUN apt-get install -y nodejs
 
 RUN npm install -g npm@latest
 
@@ -148,7 +145,6 @@ nbformat \
 nest-asyncio \
 networkx \
 nltk \
-nodejs \
 nose \
 notebook \
 numba \
@@ -271,7 +267,7 @@ zict \
 zipp \
 zope.interface 
 # Install Jupyter notebook to allow for more interactive neuroglancing
-RUN conda install --yes -c conda-forge notebook superqt \
+RUN conda install --yes -c conda-forge notebook superqt nodejs \
     && conda clean -a
     
 RUN pip install jupyterlab-pygments \
