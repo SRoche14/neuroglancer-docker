@@ -34,7 +34,7 @@ ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
 
 # setup the rest of the packages
-RUN pip install --yes aiosignal \
+RUN pip install aiosignal \
 alabaster \
 anaconda-client \
 anaconda-navigator \
