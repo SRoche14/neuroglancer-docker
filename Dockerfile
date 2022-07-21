@@ -144,6 +144,7 @@ nbformat \
 nest-asyncio \
 networkx \
 nltk \
+nodejs \
 nose \
 notebook \
 numba \
