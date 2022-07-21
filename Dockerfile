@@ -34,7 +34,7 @@ ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
 
 # setup the rest of the packages
-RUN pip install aiosignal \
+RUN conda --yes install aiosignal \
 alabaster \
 anaconda-client \
 anaconda-navigator \
@@ -266,10 +266,10 @@ zict \
 zipp \
 zope.interface 
 # Install Jupyter notebook to allow for more interactive neuroglancing
-RUN conda install --yes -c conda-forge notebook \
+RUN conda install --yes -c conda-forge notebook superqt \
     && conda clean -a
     
-RUN pip install --yes superqt \
+RUN pip install 
     jupyterlab-pygments \
     docstring-parser \
     nibabel \
