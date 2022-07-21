@@ -39,7 +39,6 @@ alabaster \
 anaconda-client \
 anaconda-navigator \
 anaconda-project \
-antspyx \
 appdirs \
 asgiref \
 asn1crypto \
@@ -50,7 +49,6 @@ attrs \
 Automat \
 Babel \
 backcall \
-backports.shutil-get-terminal-size \
 beautifulsoup4 \
 bitarray \
 bkcharts \
@@ -60,10 +58,8 @@ bokeh \
 boto \
 Bottleneck \
 cachetools \
-cachey \
 cffi \
 chardet \
-chart-studio \
 click \
 cloudpickle \
 clyent \
@@ -86,13 +82,10 @@ dill \
 distlib \
 distributed \
 Django \
-docstring-parser \
 docutils \
 entrypoints \
-et-xmlfile \
 fastcache \
 fasteners \
-fastjsonschema \
 filelock \
 Flask \
 Flask-Cors \
@@ -102,7 +95,6 @@ fsspec \
 gevent \
 glob2 \
 gmpy2 \
-google-apitools \
 google-auth \
 greenlet \
 grpcio \
@@ -110,13 +102,11 @@ h5py \
 heapdict \
 hsluv \
 html5lib \
-httplib2 \
 hyperlink \
 idna \
 imageio \
 imagesize \
 importlib-metadata \
-importlib-resources \
 incremental \
 ipykernel \
 ipython \
@@ -130,35 +120,22 @@ jeepney \
 Jinja2 \
 jsonschema \
 jupyter \
-jupyter-client \
-jupyter-console \
-jupyter-core \
 jupyterlab \
-jupyterlab-launcher \
-jupyterlab-pygments \
 keyring \
 kiwisolver \
 lazy-object-proxy \
 llvmlite \
 locket \
 lxml \
-magicgui \
 MarkupSafe \
 matplotlib \
 matplotlib-inline \
 mccabe \
 mistune \
-mkl-fft \
-mkl-random \
 mkl-service \
 more-itertools \
 mpmath \
-msgpack \
 multipledispatch \
-napari \
-napari-console \
-napari-plugin-engine \
-napari-svg \
 natsort \
 navigator-updater \
 nbclient \
@@ -166,17 +143,13 @@ nbconvert \
 nbformat \
 nest-asyncio \
 networkx \
-neuroglancer \
-nibabel \
 nltk \
 nose \
 notebook \
-npe2 \
 numba \
 numexpr \
 numpy \
 numpydoc \
-oauth2client \
 odo \
 olefile \
 openpyxl \
@@ -193,17 +166,14 @@ pexpect \
 pickleshare \
 Pillow \
 PIMS \
-Pint \
 pkginfo \
 platformdirs \
 plotly \
 pluggy \
 ply \
-prometheus-client \
 prompt-toolkit \
 protobuf \
 psutil \
-psygnal \
 ptyprocess \
 py \
 pyasn1 \
@@ -230,7 +200,6 @@ pytest-doctestplus \
 pytest-openfiles \
 pytest-remotedata \
 python-dateutil \
-pytomlpp \
 pytz \
 PyWavelets \
 PyYAML \
@@ -238,7 +207,6 @@ pyzmq \
 QtAwesome \
 qtconsole \
 QtPy \
-ray \
 requests \
 retrying \
 rope \
@@ -250,7 +218,6 @@ scipy \
 seaborn \
 SecretStorage \
 Send2Trash \
-service-identity \
 simplegeneric \
 singledispatch \
 slicerator \
@@ -270,15 +237,12 @@ spyder-kernels \
 SQLAlchemy \
 sqlparse \
 statsmodels \
-superqt \
 sympy \
-tables \
 tblib \
 tenacity \
 terminado \
 testpath \
 tifffile \
-tinycss2 \
 toolz \
 tornado \
 tqdm \
@@ -291,7 +255,6 @@ urllib3 \
 virtualenv \
 vispy \
 wcwidth \
-webcolors \
 webencodings \
 Werkzeug \
 widgetsnbextension \
@@ -305,6 +268,43 @@ zope.interface
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
+    
+RUN pip install --yes superqt \
+    jupyterlab-pygments \
+    docstring-parser \
+    nibabel \
+    webcolors \
+    napari-plugin-engine \
+    antspyx \
+    napari-console \
+    tables \
+    pytomlpp \
+    Pint \
+    jupyter-console \
+    psygnal \
+    importlib-resources \
+    msgpack \
+    magicgui \
+    et-xmlfile \
+    ray \
+    httplib2 \
+    prometheus-client \
+    mkl-fft \
+    cachey \
+    chart-studio \
+    npe2 \
+    jupyter-client \
+    tinycss2 \
+    oauth2client \
+    service-identity \
+    napari-svg \
+    backports.shutil-get-terminal-size \
+    jupyterlab-launcher \
+    mkl-random \
+    napari \
+    google-apitools \
+    jupyter-core \
+    fastjsonschema 
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
