@@ -269,8 +269,7 @@ zope.interface
 RUN conda install --yes -c conda-forge notebook superqt \
     && conda clean -a
     
-RUN pip install 
-    jupyterlab-pygments \
+RUN pip install jupyterlab-pygments \
     docstring-parser \
     nibabel \
     webcolors \
