@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM node
 LABEL author="Steven Roche"
 ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR /opt/conda
@@ -6,7 +6,7 @@ ENV CONDA_DIR /opt/conda
 # Core installs
 RUN apt-get update && \
     apt-get upgrade && \
-    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm curl && \
+    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm curl python-setuptools && \
     apt-get clean
     
 
@@ -17,8 +17,6 @@ RUN curl -sL https://deb.nodesource.com/setup_17.x | bash -
 RUN apt-get install -y nodejs 
 
 RUN npm install -g npm@latest
-
-RUN bash -c 'echo -e node -v'
 
 RUN mkdir -p ~/miniconda3
 
