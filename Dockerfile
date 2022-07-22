@@ -11,6 +11,10 @@ RUN apt-get update && \
 
 RUN npm install -g npm@latest
 
+RUN curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o install_nvm.sh
+RUN bash install_nvm.sh
+RUN nvm install 12.16.1
+
 RUN mkdir -p ~/miniconda3
 
 # Install miniconda 
@@ -24,10 +28,6 @@ RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
 # Create a user
 RUN useradd -m -s /bin/bash neuroglancer_user
 RUN chown -R neuroglancer_user:neuroglancer_user $CONDA_DIR
-
-RUN curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o install_nvm.sh
-RUN bash install_nvm.sh
-RUN nvm install 12.16.1
 
 # Env vars
 USER neuroglancer_user
