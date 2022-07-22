@@ -6,11 +6,17 @@ ENV CONDA_DIR /opt/conda
 # Core installs
 RUN apt-get update && \
     apt-get upgrade && \
-    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs && \
+    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm curl && \
     apt-get clean
     
 
 RUN npm install -g npm@latest
+
+RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+
+RUN apt -y install nodejs
+
+RUN bash -c 'echo -e node -v'
 
 RUN mkdir -p ~/miniconda3
 
