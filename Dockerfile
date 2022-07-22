@@ -11,8 +11,7 @@ RUN apt-get update && \
 
 RUN npm install -g npm@latest
 
-RUN curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o install_nvm.sh
-RUN bash install_nvm.sh
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 RUN nvm install 12.16.1
 
 RUN mkdir -p ~/miniconda3
