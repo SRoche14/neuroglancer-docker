@@ -12,7 +12,7 @@ RUN apt-get update && \
 
 RUN npm install -g npm@latest
 
-RUN curl -sL https://deb.nodesource.com/setup_17.x | -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_17.x | bash -
 
 RUN apt-get install -y nodejs 
 
