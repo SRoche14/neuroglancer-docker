@@ -21,10 +21,10 @@ RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
     $CONDA_DIR/bin/conda install --yes conda
     
     
-RUN apt-get -y install curl gnupg
-RUN curl -sL https://deb.nodesource.com/setup_12.x  | bash -
-RUN apt-get -y install nodejs
-RUN npm install
+RUN apt-get install -y curl \
+  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+  && apt-get install -y nodejs \
+  && curl -L https://www.npmjs.com/install.sh | sh
 
 
 # Create a user
