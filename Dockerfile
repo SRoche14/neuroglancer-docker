@@ -15,7 +15,7 @@ RUN mkdir -p ~/miniconda3
 
 # Install miniconda 
 RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh && \
+    wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh && \
     /bin/bash ~/miniconda3/miniconda.sh -b -p $CONDA_DIR && \
     rm -rf ~/miniconda3/miniconda3.sh && \
     $CONDA_DIR/bin/conda install --yes conda
@@ -307,6 +307,7 @@ RUN pip install jupyterlab-pygments \
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
 WORKDIR neuroglancer
+RUN git reset --hard 8432f53
 RUN ls 
 RUN python3 setup.py install
 
