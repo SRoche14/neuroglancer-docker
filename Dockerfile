@@ -311,7 +311,7 @@ RUN pip install jupyterlab-pygments \
     fastjsonschema 
 
 # install neuroglancer from github
-RUN git clone https://github.com/google/neuroglancer.git
+RUN git clone git@github.com:SRoche14/neuroglancer.git
 WORKDIR neuroglancer
 RUN git reset --hard 342d1bb
 RUN ls 
