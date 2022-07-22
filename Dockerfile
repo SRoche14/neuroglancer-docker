@@ -19,9 +19,6 @@ RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash ~/miniconda3/miniconda.sh -b -p $CONDA_DIR && \
     rm -rf ~/miniconda3/miniconda3.sh && \
     $CONDA_DIR/bin/conda install --yes conda
-    
-    
-RUN conda install nodejs -c conda-forge --repodata-fn=repodata.json
 
 
 # Create a user
@@ -35,6 +32,8 @@ ENV SHELL /bin/bash
 ENV USER neuroglancer_user
 ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
+
+RUN conda install nodejs -c conda-forge --repodata-fn=repodata.json
 
 RUN conda install --yes aiosignal \
 alabaster \
