@@ -36,7 +36,7 @@ WORKDIR $HOME
 # setup the rest of the packages
 RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython
 # Install Jupyter notebook to allow for more interactive neuroglancing
-RUN conda install --yes -c conda-forge notebook \
+RUN conda install --yes -c conda-forge notebook nodejs \
     && conda clean -a
 
 # install neuroglancer from github
