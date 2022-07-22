@@ -313,7 +313,6 @@ RUN pip install jupyterlab-pygments \
 # install neuroglancer from github
 RUN git clone https://github.com/SRoche14/neuroglancer-docker.git
 WORKDIR neuroglancer
-RUN git reset --hard 342d1bb
 RUN ls 
 RUN python3 setup.py install
 
