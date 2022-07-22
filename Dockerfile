@@ -12,9 +12,11 @@ RUN apt-get update && \
 
 RUN npm install -g npm@latest
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+RUN curl -sL https://deb.nodesource.com/setup_17.x | -E bash -
 
-RUN nvm install 14.4.0
+RUN apt-get install -y nodejs 
+
+RUN npm install -g npm@latest
 
 RUN bash -c 'echo -e node -v'
 
