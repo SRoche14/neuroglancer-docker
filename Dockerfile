@@ -6,7 +6,7 @@ ENV CONDA_DIR /opt/conda
 # Core installs
 RUN apt-get update && \
     apt-get upgrade && \
-    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs && \
+    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs curl build-essential libssl-dev && \
     apt-get clean
 
 RUN npm install -g npm@latest
@@ -24,6 +24,9 @@ RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
 # Create a user
 RUN useradd -m -s /bin/bash neuroglancer_user
 RUN chown -R neuroglancer_user:neuroglancer_user $CONDA_DIR
+
+RUN curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o install_nvm.sh
+RUN nvm install 12.16.1
 
 # Env vars
 USER neuroglancer_user
