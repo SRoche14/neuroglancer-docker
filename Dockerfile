@@ -8,6 +8,12 @@ RUN apt-get update && \
     apt-get upgrade && \
     apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs curl build-essential libssl-dev && \
     apt-get clean
+    
+WORKDIR /usr/bin/
+    
+RUN ln -s nodejs node
+
+WORKDIR $HOME
 
 RUN npm install -g npm@latest
 
@@ -33,7 +39,7 @@ ENV USER neuroglancer_user
 ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
 
-RUN conda install nodejs -c conda-forge --repodata-fn=repodata.json
+RUN conda install -c conda-forge --repodata-fn=repodata.json nodejs
 
 RUN conda install --yes aiosignal \
 alabaster \
