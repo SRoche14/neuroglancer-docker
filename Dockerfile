@@ -25,8 +25,6 @@ RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
 RUN useradd -m -s /bin/bash neuroglancer_user
 RUN chown -R neuroglancer_user:neuroglancer_user $CONDA_DIR
 
-RUN apt list --installed > installed_packages.txt
-
 # Env vars
 USER neuroglancer_user
 ENV HOME /home/neuroglancer_user
@@ -35,12 +33,12 @@ ENV USER neuroglancer_user
 ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
 
-RUN conda install -c conda-forge --repodata-fn=repodata.json nodejs
+# RUN conda install -c conda-forge --repodata-fn=repodata.json nodejs
 
-RUN conda install --yes aiosignal \
-anaconda-client \
-anaconda-navigator \
-anaconda-project 
+# RUN conda install --yes aiosignal \
+# anaconda-client \
+# anaconda-navigator \
+# anaconda-project 
 # asgiref \
 # asn1crypto \
 # astroid \
@@ -176,41 +174,41 @@ anaconda-project
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
     
-RUN pip install jupyterlab-pygments \
-    docstring-parser \
-    nibabel \
-    webcolors \
-    napari-plugin-engine \
-    antspyx \
-    napari-console \
-    tables \
-    pytomlpp \
-    Pint \
-    jupyter-console \
-    psygnal \
-    importlib-resources \
-    msgpack \
-    magicgui \
-    et-xmlfile \
-    ray \
-    httplib2 \
-    prometheus-client \
-    mkl-fft \
-    cachey \
-    chart-studio \
-    npe2 \
-    jupyter-client \
-    tinycss2 \
-    oauth2client \
-    service-identity \
-    napari-svg \
-    backports.shutil-get-terminal-size \
-    jupyterlab-launcher \
-    mkl-random \
-    napari \
-    google-apitools \
-    jupyter-core \
-    fastjsonschema 
+# RUN pip install jupyterlab-pygments \
+#     docstring-parser \
+#     nibabel \
+#     webcolors \
+#     napari-plugin-engine \
+#     antspyx \
+#     napari-console \
+#     tables \
+#     pytomlpp \
+#     Pint \
+#     jupyter-console \
+#     psygnal \
+#     importlib-resources \
+#     msgpack \
+#     magicgui \
+#     et-xmlfile \
+#     ray \
+#     httplib2 \
+#     prometheus-client \
+#     mkl-fft \
+#     cachey \
+#     chart-studio \
+#     npe2 \
+#     jupyter-client \
+#     tinycss2 \
+#     oauth2client \
+#     service-identity \
+#     napari-svg \
+#     backports.shutil-get-terminal-size \
+#     jupyterlab-launcher \
+#     mkl-random \
+#     napari \
+#     google-apitools \
+#     jupyter-core \
+#     fastjsonschema 
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
