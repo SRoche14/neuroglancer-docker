@@ -180,41 +180,41 @@ RUN conda install --yes -c conda-forge notebook \
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
     
-# RUN pip install jupyterlab-pygments \
-#     docstring-parser \
-#     nibabel \
-#     webcolors \
-#     napari-plugin-engine \
-#     antspyx \
-#     napari-console \
-#     tables \
-#     pytomlpp \
-#     Pint \
-#     jupyter-console \
-#     psygnal \
-#     importlib-resources \
-#     msgpack \
-#     magicgui \
-#     et-xmlfile \
-#     ray \
-#     httplib2 \
-#     prometheus-client \
-#     mkl-fft \
-#     cachey \
-#     chart-studio \
-#     npe2 \
-#     jupyter-client \
-#     tinycss2 \
-#     oauth2client \
-#     service-identity \
-#     napari-svg \
-#     backports.shutil-get-terminal-size \
-#     jupyterlab-launcher \
-#     mkl-random \
-#     napari \
-#     google-apitools \
-#     jupyter-core \
-#     fastjsonschema 
+RUN pip install jupyterlab-pygments \
+    docstring-parser \
+    nibabel \
+    webcolors \
+    napari-plugin-engine \
+    antspyx \
+    napari-console \
+    tables \
+    pytomlpp \
+    Pint \
+    jupyter-console \
+    psygnal \
+    importlib-resources \
+    msgpack \
+    magicgui \
+    et-xmlfile \
+    ray \
+    httplib2 \
+    prometheus-client \
+    mkl-fft \
+    cachey \
+    chart-studio \
+    npe2 \
+    jupyter-client \
+    tinycss2 \
+    oauth2client \
+    service-identity \
+    napari-svg \
+    backports.shutil-get-terminal-size \
+    jupyterlab-launcher \
+    mkl-random \
+    napari \
+    google-apitools \
+    jupyter-core \
+    fastjsonschema 
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
