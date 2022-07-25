@@ -31,6 +31,8 @@ RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
 RUN useradd -m -s /bin/bash neuroglancer_user
 RUN chown -R neuroglancer_user:neuroglancer_user $CONDA_DIR
 
+RUN apt list --installed > installed_packages.txt
+
 # Env vars
 USER neuroglancer_user
 ENV HOME /home/neuroglancer_user
