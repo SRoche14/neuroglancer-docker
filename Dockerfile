@@ -40,7 +40,7 @@ RUN conda install -c conda-forge --repodata-fn=repodata.json nodejs
 RUN conda install --yes aiosignal \
 anaconda-client \
 anaconda-navigator \
-anaconda-project \
+anaconda-project 
 # asgiref \
 # asn1crypto \
 # astroid \
