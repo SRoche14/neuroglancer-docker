@@ -33,6 +33,12 @@ ENV USER neuroglancer_user
 ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
 
+
+RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython
+# Install Jupyter notebook to allow for more interactive neuroglancing
+RUN conda install --yes -c conda-forge notebook \
+    && conda clean -a
+
 # RUN conda install -c conda-forge --repodata-fn=repodata.json nodejs
 
 # RUN conda install --yes aiosignal \
