@@ -37,7 +37,7 @@ WORKDIR $HOME
 RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython aiosignal \
 anaconda-client \
 anaconda-navigator \
-anaconda-project 
+anaconda-project \
 asgiref \
 asn1crypto \
 astroid \
@@ -72,7 +72,7 @@ RUN conda install --yes -c conda-forge notebook \
 # RUN conda install --yes aiosignal \
 # anaconda-client \
 # anaconda-navigator \
-# anaconda-project 
+# anaconda-project \
 # asgiref \
 # asn1crypto \
 # astroid \
