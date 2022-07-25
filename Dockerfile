@@ -152,7 +152,23 @@ spyder \
 spyder-kernels \
 SQLAlchemy \
 statsmodels \
-sympy 
+sympy \
+testpath \
+tifffile \
+toolz \
+traitlets \
+Twisted \
+typer \
+unicodecsv \
+virtualenv \
+webencodings \
+Werkzeug \
+widgetsnbextension \
+wrapt \
+XlsxWriter \
+xlwt \
+zict \
+zope.interface 
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
