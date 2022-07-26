@@ -34,57 +34,24 @@ ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
 
 # setup the rest of the packages
-RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython aiosignal \
-astroid \
-astropy \
-Babel \
-bitarray \
+RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython \
 boto \
 conda-build \
 dask \
 dask-image \
-datashape \
-debugpy \
-decorator \
 dill \
 imageio \
 imagesize \
-importlib-metadata \
-incremental \
-isort \
 natsort \
-nltk \
 numpydoc \
-pylint \
-pyodbc \
-rope \
 scikit-image \
 scikit-learn \
-testpath \
 tifffile 
 
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
     
-RUN pip install docstring-parser \
-    nibabel \
-    tables \
-    pytomlpp \
-    Pint \
-    psygnal \
-    msgpack \
-    magicgui \
-    et-xmlfile \
-    httplib2 \
-    mkl-fft \
-    cachey \
-    chart-studio \
-    npe2 \
-    tinycss2 \
-    mkl-random \
-    fastjsonschema 
-
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
 WORKDIR neuroglancer
