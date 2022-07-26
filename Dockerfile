@@ -35,12 +35,10 @@ WORKDIR $HOME
 
 
 RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython \
-asn1crypto \
 astroid \
 Babel \
 boto \
 cachetools \
-cffi \
 conda-build \
 dask \
 dask-image \
@@ -48,8 +46,6 @@ datashape \
 debugpy \
 dill \
 docutils \
-grpcio \
-hsluv \
 imageio \
 imagesize \
 mpmath \
@@ -74,7 +70,7 @@ sympy \
 testpath \
 tifffile \
 toolz \
-virtualenv \
+virtualenv 
 
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
