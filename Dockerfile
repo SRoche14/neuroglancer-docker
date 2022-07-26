@@ -67,7 +67,23 @@ tifffile
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
     
-RUN pip install antspyx 
+RUN pip install docstring-parser \
+    nibabel \
+    tables \
+    pytomlpp \
+    Pint \
+    psygnal \
+    msgpack \
+    magicgui \
+    et-xmlfile \
+    httplib2 \
+    mkl-fft \
+    cachey \
+    chart-studio \
+    npe2 \
+    tinycss2 \
+    mkl-random \
+    fastjsonschema 
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
