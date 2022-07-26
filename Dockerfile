@@ -66,6 +66,24 @@ tifffile
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
+    
+RUN pip install docstring-parser \
+    nibabel \
+    napari-plugin-engine \
+    antspyx \
+    napari-console \
+    tables \
+    psygnal \
+    importlib-resources \
+    msgpack \
+    magicgui \
+    ray \
+    httplib2 \
+    prometheus-client \
+    mkl-fft \
+    napari-svg \
+    mkl-random \
+    napari \
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
