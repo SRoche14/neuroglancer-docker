@@ -34,180 +34,63 @@ ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
 
 
-RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython aiosignal \
-anaconda-client \
-anaconda-navigator \
-anaconda-project \
-asgiref \
+RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython \
 asn1crypto \
 astroid \
-astropy \
 Babel \
-bitarray \
 boto \
 cachetools \
 cffi \
-chardet \
-click \
-cloudpickle \
-clyent \
 conda-build \
-Cython \
-cytoolz \
 dask \
 dask-image \
 datashape \
 debugpy \
-decorator \
 dill \
-distlib \
-distributed \
-Django \ 
 docutils \
-fastcache \
-fasteners \
-filelock \
-Flask \
-freetype-py \
-frozenlist \
-fsspec \
-gevent \
-gmpy2 \
-google-auth \
-greenlet \
 grpcio \
 hsluv \
 imageio \
 imagesize \
-importlib-metadata \
-incremental \
-isort \
-itsdangerous \
-jeepney \
-jsonschema \
-jupyter \
-jupyterlab \
-keyring \
-lazy-object-proxy \
-locket \
-lxml \
-mccabe \
-more-itertools \
 mpmath \
-multipledispatch \
 natsort \
-navigator-updater \
 nltk \
 numpydoc \
-openpyxl \
-partd \
-path.py \
 pathlib2 \
-patsy \
-pep8 \
-PIMS \
 pkginfo \
-platformdirs \
 plotly \
-pluggy \
 ply \
-protobuf \
-psutil \
-py \
-pycodestyle \
-pycosat \
-pycrypto \
-pycurl \
-pydantic \
 pylint \
 pyodbc \
 PyOpenGL \
 PySocks \
-pytest \
-pytest-arraydiff \
-pytest-astropy \
-pytest-doctestplus \
-pytest-openfiles \
-pytest-remotedata \
-PyWavelets \
-QtAwesome \
-qtconsole \
-QtPy \
-rope \
 scikit-image \
 scikit-learn \
-SecretStorage \
-simplegeneric \
-slicerator \
-snowballstemmer \
 sortedcontainers \
-Sphinx \
-sphinxcontrib-applehelp \
-sphinxcontrib-devhelp \
-sphinxcontrib-htmlhelp \
-sphinxcontrib-jsmath \
-sphinxcontrib-qthelp \
-sphinxcontrib-serializinghtml \
 spyder \
 spyder-kernels \
-SQLAlchemy \
 statsmodels \
 sympy \
 testpath \
 tifffile \
 toolz \
-traitlets \
-Twisted \
-typer \
-unicodecsv \
 virtualenv \
-webencodings \
-Werkzeug \
-widgetsnbextension \
-wrapt \
-XlsxWriter \
-xlwt \
-zict \
-zope.interface 
+
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
     
-RUN pip install jupyterlab-pygments \
-    docstring-parser \
-    nibabel \
-    webcolors \
-    napari-plugin-engine \
+RUN pip install napari-plugin-engine \
     antspyx \
     napari-console \
     tables \
-    pytomlpp \
-    Pint \
-    jupyter-console \
     psygnal \
-    importlib-resources \
-    msgpack \
-    magicgui \
-    et-xmlfile \
     ray \
-    httplib2 \
-    prometheus-client \
-    mkl-fft \
-    cachey \
-    chart-studio \
     npe2 \
-    jupyter-client \
     tinycss2 \
-    oauth2client \
-    service-identity \
     napari-svg \
-    backports.shutil-get-terminal-size \
-    jupyterlab-launcher \
     mkl-random \
-    napari \
-    google-apitools \
-    jupyter-core \
-    fastjsonschema 
+    napari 
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
