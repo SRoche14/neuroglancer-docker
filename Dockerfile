@@ -34,15 +34,7 @@ ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
 
 
-RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython \
-dask \
-dask-image \
-dill \
-imageio \
-natsort \
-numpydoc \
-testpath \
-tifffile 
+RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython 
 
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
