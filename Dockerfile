@@ -68,7 +68,7 @@ RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
     
 RUN pip install antspyx \
-    ray \
+    ray 
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
