@@ -41,10 +41,6 @@ dill \
 imageio \
 natsort \
 numpydoc \
-pathlib2 \
-pylint \
-scikit-image \
-scikit-learn \
 testpath \
 tifffile 
 
