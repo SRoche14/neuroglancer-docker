@@ -35,42 +35,22 @@ WORKDIR $HOME
 
 
 RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython \
-astroid \
-Babel \
-boto \
-cachetools \
 conda-build \
 dask \
 dask-image \
-datashape \
-debugpy \
 dill \
 docutils \
 imageio \
 imagesize \
-mpmath \
 natsort \
-nltk \
 numpydoc \
 pathlib2 \
-pkginfo \
-plotly \
-ply \
 pylint \
-pyodbc \
 PyOpenGL \
-PySocks \
 scikit-image \
 scikit-learn \
-sortedcontainers \
-spyder \
-spyder-kernels \
-statsmodels \
-sympy \
 testpath \
-tifffile \
-toolz \
-virtualenv 
+tifffile 
 
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
@@ -82,8 +62,6 @@ RUN pip install napari-plugin-engine \
     tables \
     psygnal \
     ray \
-    npe2 \
-    tinycss2 \
     napari-svg \
     mkl-random \
     napari 
