@@ -35,18 +35,14 @@ WORKDIR $HOME
 
 
 RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython \
-conda-build \
 dask \
 dask-image \
 dill \
-docutils \
 imageio \
-imagesize \
 natsort \
 numpydoc \
 pathlib2 \
 pylint \
-PyOpenGL \
 scikit-image \
 scikit-learn \
 testpath \
@@ -59,8 +55,6 @@ RUN conda install --yes -c conda-forge notebook \
 RUN pip install napari-plugin-engine \
     antspyx \
     napari-console \
-    tables \
-    psygnal \
     ray \
     napari-svg \
     mkl-random \
