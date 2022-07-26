@@ -34,14 +34,35 @@ ENV PATH $CONDA_DIR/bin:$PATH
 WORKDIR $HOME
 
 # setup the rest of the packages
-RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython dask \
+RUN conda install --yes nose numpy pandas matplotlib scipy seaborn numba bokeh pillow ipython aiosignal \
+astroid \
+astropy \
+Babel \
+bitarray \
+boto \
+conda-build \
+dask \
 dask-image \
+datashape \
+debugpy \
+decorator \
 dill \
 imageio \
+imagesize \
+importlib-metadata \
+incremental \
+isort \
 natsort \
+nltk \
 numpydoc \
+pylint \
+pyodbc \
+rope \
+scikit-image \
+scikit-learn \
 testpath \
-tifffile 
+tifffile \
+
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
