@@ -83,7 +83,7 @@ RUN pip install docstring-parser \
     mkl-fft \
     napari-svg \
     mkl-random \
-    napari \
+    napari 
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
