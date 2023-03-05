@@ -8,6 +8,10 @@ RUN apt-get update && \
     apt-get upgrade && \
     apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs && \
     apt-get clean
+    
+RUN npm install -g npm@latest \
+    npm install -g n \
+    n latest
 
 RUN mkdir -p ~/miniconda3
 
