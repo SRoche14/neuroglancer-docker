@@ -6,10 +6,14 @@ ENV CONDA_DIR /opt/conda
 # Core installs
 RUN apt-get update && \
     apt-get upgrade && \
-    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs=16.13.0 && \
+    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs && \
     apt-get clean
 
 RUN npm install -g npm@latest
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+RUN nvm install 14.4.0
 
 RUN mkdir -p ~/miniconda3
 
