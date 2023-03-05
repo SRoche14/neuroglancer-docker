@@ -6,15 +6,10 @@ ENV CONDA_DIR /opt/conda
 # Core installs
 RUN apt-get update && \
     apt-get upgrade && \
-    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm nodejs && \
+    apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 npm && \
     apt-get clean
 
 RUN npm install -g npm@latest
-
-RUN npm install -g n \
-    n lts \
-    n latest \
-    n prune
 
 RUN mkdir -p ~/miniconda3
 
