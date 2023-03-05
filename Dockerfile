@@ -9,12 +9,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash -
 RUN apt-get update && \
     apt-get upgrade && \
     apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 libgl1-mesa-glx npm nodejs && \
-    apt-get clean
-
-RUN mkdir -p ~/miniconda3
-
-# Install miniconda 
-RUN echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
+    apt-get clean \
+    npm install -g npm@latest \
+    mkdir -p ~/miniconda3 \
+    echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh && \
     /bin/bash ~/miniconda3/miniconda.sh -b -p $CONDA_DIR && \
     rm -rf ~/miniconda3/miniconda3.sh && \
