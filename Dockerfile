@@ -3,15 +3,14 @@ LABEL author="Steven Roche"
 ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR /opt/conda
 
+RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash - &&
+
 # Core installs
 RUN apt-get update && \
     apt-get upgrade && \
     apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 libgl1-mesa-glx npm && \
-    apt-get clean
-    
-RUN npm install -g npm@latest
-    
-RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash - &&\
+    apt-get clean \
+    npm install -g npm@latest \
     apt-get install -y nodejs
 
 RUN mkdir -p ~/miniconda3
