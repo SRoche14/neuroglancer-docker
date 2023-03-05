@@ -9,8 +9,10 @@ RUN apt-get update && \
     apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 && \
     apt-get clean
     
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
+RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash - &&\
     apt-get install -y nodejs
+    
+RUN yum install mesa-libGL-devel
 
 RUN mkdir -p ~/miniconda3
 
