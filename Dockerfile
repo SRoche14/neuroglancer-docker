@@ -3,7 +3,7 @@ LABEL author="Steven Roche"
 ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR /opt/conda
 
-RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash - &&
+RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash -
 
 # Core installs
 RUN apt-get update && \
