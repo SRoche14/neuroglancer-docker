@@ -11,9 +11,10 @@ RUN apt-get update && \
 
 RUN npm install -g npm@latest
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-
-RUN nvm install 14.4.0
+RUN npm install -g n \
+    n lts \
+    n latest \
+    n prune
 
 RUN mkdir -p ~/miniconda3
 
