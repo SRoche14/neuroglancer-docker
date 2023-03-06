@@ -1,4 +1,4 @@
-FROM 19-bullseye
+FROM node:19.7-bullseye
 LABEL author="Steven Roche"
 ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR /opt/conda
