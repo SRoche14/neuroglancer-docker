@@ -4,8 +4,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR /opt/conda
 
 # Core installs
-RUN apt-get update && \
-    apt-get upgrade && \
+RUN apt-get --yes update && \
+    apt-get --yes upgrade && \
     apt-get install -y git vim wget build-essential python3 ca-certificates bzip2 libsm6 libgl1-mesa-glx npm && \
     apt-get clean
     
