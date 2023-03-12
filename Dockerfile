@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM node:19.7-bullseye
 LABEL author="Steven Roche"
 ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR /opt/conda
@@ -55,9 +55,12 @@ click \
 cloudpickle \
 clyent \
 conda-build \
+cudatoolkit \
+cudnn \
 Cython \
 cytoolz \
 dask \
+dask-core \
 dask-image \
 datashape \
 debugpy \
@@ -80,12 +83,16 @@ google-auth \
 greenlet \
 grpcio \
 hsluv \
+h5py \
+hdf5 \
 imageio \
 imagesize \
 importlib-metadata \
 incremental \
+ipython \
 isort \
 itsdangerous \
+jbig \
 jeepney \
 jsonschema \
 jupyter \
@@ -94,6 +101,7 @@ keyring \
 lazy-object-proxy \
 locket \
 lxml \
+matplotlib \
 mccabe \
 more-itertools \
 mpmath \
@@ -101,14 +109,18 @@ multipledispatch \
 natsort \
 navigator-updater \
 nltk \
+numba \
+numpy \
 numpydoc \
 openpyxl \
+pandas \
 partd \
 path.py \
 pathlib2 \
 patsy \
 pep8 \
 PIMS \
+pip \
 pkginfo \
 platformdirs \
 plotly \
@@ -139,6 +151,7 @@ QtPy \
 rope \
 scikit-image \
 scikit-learn \
+scipy \
 SecretStorage \
 simplegeneric \
 slicerator \
@@ -210,7 +223,16 @@ RUN pip install jupyterlab-pygments \
     napari \
     google-apitools \
     jupyter-core \
-    fastjsonschema 
+    fastjsonschema \
+    opencv-python \
+    napari \ 
+    'napari[all]' \ 
+    'napari[pyside2]' \
+    ray \
+    scikit-image \
+    zarr \
+    nvidia-pyindex \
+    nvidia-dali-cuda110
 
 # install neuroglancer from github
 RUN git clone https://github.com/google/neuroglancer.git
