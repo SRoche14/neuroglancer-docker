@@ -178,7 +178,6 @@ RUN conda install --yes -c conda-forge notebook \
     
 RUN pip3 install jupyterlab-pygments \
     fss \
-    fss_utils \
     docstring-parser \
     nibabel \
     webcolors \
