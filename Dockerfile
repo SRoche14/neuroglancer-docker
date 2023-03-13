@@ -86,6 +86,8 @@ importlib-metadata \
 incremental \
 isort \
 itsdangerous \
+fss \
+fss_utils \
 jeepney \
 jsonschema \
 jupyter \
@@ -185,8 +187,6 @@ RUN pip install jupyterlab-pygments \
     napari-console \
     tables \
     pytomlpp \
-    fss \
-    fss_utils \
     Pint \
     jupyter-console \
     psygnal \
