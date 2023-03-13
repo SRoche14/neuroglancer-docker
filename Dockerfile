@@ -1,4 +1,4 @@
-FROM node:19.7-bullseye
+FROM debian:bullseye
 LABEL author="Steven Roche"
 ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR /opt/conda
@@ -80,6 +80,7 @@ google-auth \
 greenlet \
 grpcio \
 hsluv \
+h5py \
 imageio \
 imagesize \
 importlib-metadata \
