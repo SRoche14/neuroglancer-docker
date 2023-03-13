@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM node:19.7-bullseye
 LABEL author="Steven Roche"
 ENV DEBIAN_FRONTEND noninteractive
 ENV CONDA_DIR /opt/conda
@@ -80,7 +80,6 @@ google-auth \
 greenlet \
 grpcio \
 hsluv \
-h5py \
 imageio \
 imagesize \
 importlib-metadata \
@@ -199,6 +198,7 @@ RUN pip install jupyterlab-pygments \
     mkl-fft \
     cachey \
     chart-studio \
+    h5py \
     npe2 \
     jupyter-client \
     tinycss2 \
