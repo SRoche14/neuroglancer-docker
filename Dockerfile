@@ -86,8 +86,6 @@ importlib-metadata \
 incremental \
 isort \
 itsdangerous \
-fss \
-fss_utils \
 jeepney \
 jsonschema \
 jupyter \
@@ -178,7 +176,9 @@ zope.interface
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
     
-RUN pip install jupyterlab-pygments \
+RUN pip3 install jupyterlab-pygments \
+    fss \
+    fss_utils \
     docstring-parser \
     nibabel \
     webcolors \
