@@ -244,9 +244,6 @@ WORKDIR neuroglancer
 RUN ls 
 RUN python3 setup.py install
 
-ADD docker_demo.py $HOME/docker_demo.py
-ADD notebooks $HOME/notebooks
-ADD test_data $HOME/test_data
 USER root
 RUN chown -R neuroglancer_user:neuroglancer_user $HOME/notebooks
 RUN chown -R neuroglancer_user:neuroglancer_user $HOME/docker_demo.py
