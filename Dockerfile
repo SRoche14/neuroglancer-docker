@@ -112,6 +112,7 @@ numba \
 numpy \
 numpydoc \
 openpyxl \
+opencv \
 pandas \
 partd \
 path.py \
@@ -187,6 +188,10 @@ zope.interface
 # Install Jupyter notebook to allow for more interactive neuroglancing
 RUN conda install --yes -c conda-forge notebook \
     && conda clean -a
+
+RUN conda create -n caiman -c conda-forge caiman
+RUN /bin/bash -c "source activate caiman && caimanmanager install"
+
     
 RUN pip3 install jupyterlab-pygments \
     fss \
